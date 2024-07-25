@@ -16,7 +16,6 @@ fun FragmentChanger(view: View): Fragment {
             Log.d("click", "theory")
             return TheoryMain.newInstance()
         }
-
         R.id.goToAccount -> {
             Log.d("click", "acc")
             return AccountMain.newInstance()

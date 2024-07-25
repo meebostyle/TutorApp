@@ -8,6 +8,26 @@
     android:orientation="vertical"
     tools:context=".mainAct.ui.MainActivity"
     android:weightSum="10">
+    <FrameLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:visibility="gone"
+
+        >
+        <ProgressBar
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            />
+
+
+
+    </FrameLayout>
+
 
     <androidx.fragment.app.FragmentContainerView
         android:name="com.example.tutorapp.theory.ui.TheoryMain"
@@ -58,6 +78,7 @@
             android:onClick="ChangeFragment"
             android:backgroundTint="@color/yellow"/>
     </LinearLayout>
+
 
 
 
