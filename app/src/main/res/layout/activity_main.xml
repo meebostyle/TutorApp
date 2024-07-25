@@ -9,24 +9,22 @@
     tools:context=".mainAct.ui.MainActivity"
     android:weightSum="10">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:name="com.example.tutorapp.theory.ui.TheoryMain"
         android:id="@+id/fragmentViewHolder"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
-        />
+        android:layout_weight="10" />
 
 
     <LinearLayout
         android:id="@+id/dadada"
-        android:background="@color/white"
+        android:background="@color/blackBlue"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="fill_horizontal"
-        android:weightSum="4"
-        >
+        android:weightSum="4">
 
         <Button
             android:id="@+id/goToTheory"
@@ -34,26 +32,31 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="ChangeFragment"
-            />
+            android:backgroundTint="@color/yellow"/>
+
         <Button
             android:id="@+id/goToPractice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ChangeFragment"/>
+            android:onClick="ChangeFragment"
+            android:backgroundTint="@color/yellow"/>
 
         <Button
             android:id="@+id/goToLearning"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ChangeFragment"/>
+            android:onClick="ChangeFragment"
+            android:backgroundTint="@color/yellow"/>
+
         <Button
             android:id="@+id/goToAccount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ChangeFragment"/>
+            android:onClick="ChangeFragment"
+            android:backgroundTint="@color/yellow"/>
     </LinearLayout>
 
 
