@@ -1,4 +1,4 @@
-package com.example.tutorapp.theory.ui
+package com.example.tutorapp.theory.domain
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tutorapp.R
-import com.example.tutorapp.theory.domain.NameForTheme
 
 class AdapterForTheory(private var name: List<NameForTheme>, var context: Context):
     RecyclerView.Adapter<AdapterForTheory.MyViewHolder>() {

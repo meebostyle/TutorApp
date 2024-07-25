@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.tutorapp.R
+import com.example.tutorapp.theory.domain.AdapterForTheory
 import com.example.tutorapp.theory.domain.NameForTheme
 
 /**
