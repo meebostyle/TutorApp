@@ -5,17 +5,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
+import androidx.fragment.app.FragmentContainerView
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tutorapp.R
+import com.example.tutorapp.theory.ui.DetailedTheory
+import com.example.tutorapp.theory.ui.TheoryMain
 
-class AdapterForTheory(private var name: List<NameForTheme>, var context: Context):
+class AdapterForTheory(private var name: List<NameForTheme>, var context: Context,
+                       private val fragmentManager: FragmentManager,
+                       private val backButton: AppCompatButton,
+                       private val cardDetailedContainer: FragmentContainerView
+    ):
     RecyclerView.Adapter<AdapterForTheory.MyViewHolder>() {
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val itemListForm: TextView = itemView.findViewById(R.id.itemListFormula)
         val imageFormula: ImageView = itemView.findViewById(R.id.imageFormula)
         val itemListDesc: TextView = itemView.findViewById(R.id.itemListDesc)
+        val cardContainer: LinearLayout = itemView.findViewById(R.id.cardContainer)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -40,6 +51,13 @@ class AdapterForTheory(private var name: List<NameForTheme>, var context: Contex
         holder.imageFormula.setImageResource(imageId)
         holder.itemListForm.text = name[position].theme
         holder.itemListDesc.text = name[position].desc
+        holder.cardContainer.setOnClickListener {
+            backButton.visibility = View.VISIBLE
+            cardDetailedContainer.visibility = View.VISIBLE
+
+            TheoryMain.startDetailedFragment(fragmentManager,cardDetailedContainer.id, DetailedTheory.newInstance())
+        }
+
 
     }
 

@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun ChangeFragment(view: View) {
+    fun changeFragment(view: View) {
         if (activeFragmentMain != DetectActiveFragmentMain(view)){
         progressBar.visibility = View.VISIBLE
         supportFragmentManager
@@ -54,5 +54,6 @@ class MainActivity : AppCompatActivity() {
         }
         activeFragmentMain = DetectActiveFragmentMain(view)
     }
+
 
 }

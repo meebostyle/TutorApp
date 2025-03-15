@@ -48,34 +48,46 @@
 
         <Button
             android:id="@+id/goToTheory"
+
+            android:textColor="@color/black"
+            android:text="Theory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ChangeFragment"
+            android:onClick="changeFragment"
             android:backgroundTint="@color/yellow"/>
 
         <Button
             android:id="@+id/goToPractice"
+
+            android:textColor="@color/black"
+            android:text="Practice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ChangeFragment"
+            android:onClick="changeFragment"
             android:backgroundTint="@color/yellow"/>
 
         <Button
             android:id="@+id/goToLearning"
             android:layout_width="0dp"
+
+            android:textColor="@color/black"
+            android:text="Learn"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ChangeFragment"
+            android:onClick="changeFragment"
             android:backgroundTint="@color/yellow"/>
 
         <Button
             android:id="@+id/goToAccount"
             android:layout_width="0dp"
+
+            android:textColor="@color/black"
+            android:text="Account"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="ChangeFragment"
+            android:onClick="changeFragment"
             android:backgroundTint="@color/yellow"/>
     </LinearLayout>
 
