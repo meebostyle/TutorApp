@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/navigation_theory"
+    >
+
+    <fragment
+        android:id="@+id/navigation_theory"
+        android:name="com.example.tutorapp.theory.ui.TheoryMain"
+        android:label="Theory"
+        tools:layout="@layout/fragment_theory_main"
+        />
+
+    <fragment
+        android:id="@+id/navigation_practice"
+        android:name="com.example.tutorapp.practice.ui.PracticeMain"
+        android:label="Practice"
+        tools:layout="@layout/fragment_practice_main"
+
+        />
+    <fragment
+        android:id="@+id/navigation_learning"
+        android:name="com.example.tutorapp.learning.ui.LearningMain"
+        android:label="Learning"
+        tools:layout="@layout/fragment_learning_main"
+
+        />
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.example.tutorapp.account.ui.AccountMain"
+        android:label="Account"
+        tools:layout="@layout/fragment_account_main"
+        />
+
+</navigation>

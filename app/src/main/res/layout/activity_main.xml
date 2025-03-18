@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,6 +9,8 @@
     tools:context=".mainAct.ui.MainActivity"
     android:weightSum="10">
     <FrameLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,70 +30,37 @@
 
     </FrameLayout>
 
+    <fragment
 
-    <androidx.fragment.app.FragmentContainerView
-        android:name="com.example.tutorapp.theory.ui.TheoryMain"
-        android:id="@+id/fragmentViewHolder"
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:navGraph="@navigation/navigation"
+        />
 
 
-    <LinearLayout
-        android:id="@+id/dadada"
-        android:background="@color/blackBlue"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="fill_horizontal"
-        android:weightSum="4">
 
-        <Button
-            android:id="@+id/goToTheory"
-
-            android:textColor="@color/black"
-            android:text="Theory"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="changeFragment"
-            android:backgroundTint="@color/yellow"/>
-
-        <Button
-            android:id="@+id/goToPractice"
-
-            android:textColor="@color/black"
-            android:text="Practice"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="changeFragment"
-            android:backgroundTint="@color/yellow"/>
-
-        <Button
-            android:id="@+id/goToLearning"
-            android:layout_width="0dp"
-
-            android:textColor="@color/black"
-            android:text="Learn"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="changeFragment"
-            android:backgroundTint="@color/yellow"/>
-
-        <Button
-            android:id="@+id/goToAccount"
-            android:layout_width="0dp"
-
-            android:textColor="@color/black"
-            android:text="Account"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="changeFragment"
-            android:backgroundTint="@color/yellow"/>
-    </LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        />
 
 
 
 
-</LinearLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

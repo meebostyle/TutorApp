@@ -8,13 +8,11 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.tutorapp.R
-import com.example.tutorapp.mainAct.domain.DetectActiveFragmentMain
-import com.example.tutorapp.mainAct.domain.FragmentChanger
+
 import com.example.tutorapp.theory.domain.AdapterForTheory
 import com.example.tutorapp.theory.domain.NameForTheme
 
@@ -60,16 +58,7 @@ class TheoryMain : Fragment() {
         themeList.adapter = AdapterForTheory(themes, requireContext(),childFragmentManager, backButton, cardContainer)
 
     }
-    companion object{
-        @JvmStatic
-        fun newInstance() = TheoryMain()
-        @JvmStatic
-        fun startDetailedFragment(fragmentManager: FragmentManager, containerId: Int, fragment: Fragment) {
-            fragmentManager.beginTransaction()
-                .replace(containerId, fragment)
-                .commit()
-        }
-    }
+
 
 
 

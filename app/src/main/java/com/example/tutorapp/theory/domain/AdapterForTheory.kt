@@ -51,12 +51,7 @@ class AdapterForTheory(private var name: List<NameForTheme>, var context: Contex
         holder.imageFormula.setImageResource(imageId)
         holder.itemListForm.text = name[position].theme
         holder.itemListDesc.text = name[position].desc
-        holder.cardContainer.setOnClickListener {
-            backButton.visibility = View.VISIBLE
-            cardDetailedContainer.visibility = View.VISIBLE
 
-            TheoryMain.startDetailedFragment(fragmentManager,cardDetailedContainer.id, DetailedTheory.newInstance())
-        }
 
 
     }
