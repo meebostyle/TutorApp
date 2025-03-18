@@ -4,6 +4,7 @@
         android:id="@+id/navigation_theory"
         android:title="Theory"
 
+
         />
     <item
         android:id="@+id/navigation_practice"

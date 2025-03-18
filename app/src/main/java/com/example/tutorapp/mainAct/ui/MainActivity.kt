@@ -9,7 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.tutorapp.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,23 +24,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         enableEdgeToEdge()
-        progressBar = findViewById(R.id.progressBar)
-
-        val navController = findNavController(R.id.nav_host_fragment)
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.navigation_theory, R.id.navigation_practice, R.id.navigation_learning, R.id.navigation_account)
-        )
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        progressBar = findViewById(R.id.progressBar)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
+        val navController = findNavController(R.id.nav_host_fragment)
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
 
-
-
+        bottomNavigationView.setupWithNavController(navController)
 
     }
 
