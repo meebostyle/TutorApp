@@ -1,34 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".practice.ui.PracticeMain"
-    android:background="#201E28">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    android:background="#FFFFFF">
+    <com.google.android.material.imageview.ShapeableImageView
+        app:shapeAppearanceOverlay="@style/CircleImageView"
+        android:scaleType="centerCrop"
+        android:id="@+id/IVAvatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/avatar"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+
+
+
+        />
+    <TextView
+        android:fontFamily="@font/inter_600"
+        android:id="@+id/nickName_textView"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:text="Vladislav Shakhvorostov"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/IVAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+
+
+        android:layout_marginStart="8dp"
+
+        />
+    <TextView
+        android:fontFamily="@font/inter_400"
+        android:id="@+id/profession_textView"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:text="Android jr dev"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/IVAvatar"
+        app:layout_constraintTop_toBottomOf="@id/nickName_textView"
+        android:layout_marginTop="2dp"
+
+        android:layout_marginStart="8dp"
+
+        />
+    <TextView
+        android:fontFamily="@font/inter_400"
+        android:id="@+id/lastOnline_textView"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:text="2hr ago"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/IVAvatar"
+        app:layout_constraintTop_toBottomOf="@id/profession_textView"
+        android:layout_marginTop="2dp"
+
+        android:layout_marginStart="8dp"
+
+        />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/moreVert_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/baseline_more_vert_24"
+        />
+    
+    <TextView
+        android:id="@+id/content_textView"
+        android:fontFamily="@font/inter_400"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="51dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastOnline_textView"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"
+        android:textColor="#000000"
+        android:text="Embark on an Exploration of AI in Engineering: We’ll Dive in Its impact, Challenges, Applications, and More! Ready for the Adventure? "
+        />
+    <Button
+        android:gravity="center"
+        android:id="@+id/docs_textView"
+        android:fontFamily="@font/source_code_400"
+        app:iconTint="#000000"
+        app:icon="@drawable/baseline_description_24"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content_textView"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:textColor="#3C3C43"
+        android:backgroundTint = "#F2F2F7"
+        android:text="mackenzie_res.doc"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="0dp"
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f0f0f0"
-
-            app:layout_constraintTop_toTopOf="parent"
-
-            android:text=""
-
-            />
 
 
+        />
+    <Button
+        android:id="@+id/moreDocs_textView"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/source_code_400"
+        app:layout_constraintStart_toEndOf="@id/docs_textView"
+        app:layout_constraintTop_toBottomOf="@id/content_textView"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:textColor="#3C3C43"
+        android:backgroundTint = "#F2F2F7"
+        android:text="2+"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        style="?attr/materialIconButtonStyle"
+
+        />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/moreDocs_textView"
+        />
 
 
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

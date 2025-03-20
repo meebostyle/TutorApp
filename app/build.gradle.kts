@@ -26,6 +26,9 @@ android {
             )
         }
     }
+    viewBinding {
+        enable = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -36,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.dotsindicator)
+    implementation (libs.androidx.viewpager2)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.core.ktx)
