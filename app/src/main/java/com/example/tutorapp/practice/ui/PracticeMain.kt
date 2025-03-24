@@ -38,7 +38,12 @@ class PracticeMain : Fragment() {
 
         val viewPager2 = binding.pager
 
+
+
         viewPager2.adapter = ViewPagerAdapter()
+        val adapter = viewPager2.adapter
+        binding.wormDotsIndicator.attachTo(viewPager2)
+
         viewPager2.setPageTransformer { page, position ->
             val offset = 24f
             page.translationX = position * offset
@@ -50,6 +55,13 @@ class PracticeMain : Fragment() {
 
             page.alpha = 1 - 0.4f * abs(position)
         }
+
+        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.tvPagerCounter.text = "${position+1}/${adapter!!.getItemCount()}"
+            }
+        })
 
     }
 
